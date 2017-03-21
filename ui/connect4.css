@@ -1,0 +1,5 @@
+
+@-webkit-keyframes hanim {
+    0% { stroke-width: 1px; stroke: black; }
+    100% { stroke-width: 3px; stroke: yellow; }
+}
