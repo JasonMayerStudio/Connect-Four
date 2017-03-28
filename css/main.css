@@ -1,1 +1,10 @@
 /*main styling*/
+
+.cell{
+	border:10px solid rgb(75, 180, 175);
+	position:relative;
+    width:50px;
+	height:50px;
+	overflow:hidden;
+	float:left;
+}
