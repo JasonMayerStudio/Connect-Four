@@ -1,34 +1,40 @@
-
 <!DOCTYPE html>
-<html >
-
-  <head>
-    <title>Connect 4</title>    
+<html>
+<head>
+    <title>Connect 4</title>
     <link rel="stylesheet" href="css/style.css">
-  </head>
-
-    <body>
+</head>
+<body>
     <div class="container">
-
         <div class="header">
-        <div class="container" ng-app="connectFour" ng-controller="mainController">
-	<div ng-show="main.modal" class="modal" ng-click="main.modal = false">
-		<div class="modal-inner">
-			<span  ng-click="main.modal = false">X</span>
-			
-	</div>
-
-            <ul class="nav nav-pull pull-right">
-                <li class="active"><a href="#start">New Game</a></li>
-            </ul>
-
-            <h3>Connect 4</h3>
-
+            <div class="container" ng-app="connectFour" ng-controller="mainController">
+                <div ng-show="main.modal" class="modal" ng-click="main.modal = false">
+                    <div class="modal-inner">
+                        <span ng-click="main.modal = false">X</span>
+                    </div>
+                    <div class="wrap winner-{{main.winner}}">
+                        <h2>Connect 4</h2>
+                        <div class="board active-{{main.active}}">
+                            <span class="row" ng-repeat="row in main.boardState track by $index">
+				                   <div ng-repeat="cell in row track by $index" class="cell active-{{cell}}" ng-click="main.drop($parent.$index,$index)"></div>
+				                   <p style="clear:both;"></p>
+			                 </span>
+                            <div class="leftFoot"></div>
+                            <div class="rightFoot"></div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <button class="reset" ng-click="main.init()">Reset</button>
+                        <button class="about" ng-click="main.modal = true">About</button>
+                    </div>
+                </div>
+                <ul class="nav nav-pull pull-right">
+                    <li class="active"><a href="#start">New Game</a>
+                    </li>
+                </ul>
+           </div>
         </div>
-
-        <div ng-view></div>
     </div>
 
-  </body>
+</body>
 
 </html>
