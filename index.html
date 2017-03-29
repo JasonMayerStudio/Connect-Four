@@ -11,6 +11,12 @@
     <div class="container">
 
         <div class="header">
+        <div class="container" ng-app="connectFour" ng-controller="mainController">
+	<div ng-show="main.modal" class="modal" ng-click="main.modal = false">
+		<div class="modal-inner">
+			<span  ng-click="main.modal = false">X</span>
+			
+	</div>
 
             <ul class="nav nav-pull pull-right">
                 <li class="active"><a href="#start">New Game</a></li>
