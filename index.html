@@ -33,7 +33,7 @@
 		<button class="about" ng-click="main.modal = true">About</button>
 		<div ng-show="main.playType == 1" class="aicomments" scroll-glue>
 			<h3>AI Comments</h3>
-			<div class="comment" ng-repeat="comment in main.aiComments track by $index">{{comment}}</div>
+			<div class="comment"  ng-repeat="comment in main.aiComments track by $index">{{comment}}</div>
 		</div>
 		<h2 ng-show="main.winner">Winner is {{main.winner}}</h2>
 	</div>
