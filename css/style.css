@@ -190,22 +190,12 @@ h2 {
 }
 
 .aicomments {
-	width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    border: 1px solid #B6B6B6;
-    margin-bottom:20px;
-    max-height:100px;
-    overflow-y:scroll;
-    overflow-x:hidden;
+	display:none;
+	
 }
 
 .aicomments h3 {
-	background: rgb(57, 66, 64);
-	margin: 0;
-	padding: 10px;
-	color: white;
-	font-family:sans-serif;
+	display:none;
 }
 
 .comment {
