@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Connect Four</title>
-      <link rel="stylesheet" href="css/style.css"> 
+    <meta charset="UTF-8">
+    <title>Connect Four</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="container" ng-app="connectFour" ng-controller="mainController as main">
-	<div ng-show="main.modal" class="modal" ng-click="main.modal = false">
-	
-	</div>
-	<div class="wrap winner-{{main.winner}}">
-		<h2>Connect Four</h2>
-	
-	  <div class="board active-{{main.active}}">
-			<span class="row" ng-repeat="row in main.boardState track by $index">
-				<div ng-repeat="cell in row track by $index" class="cell active-{{cell}}" ng-click="main.drop($parent.$index,$index)"></div>
-				<p style="clear:both;"></p>
-			</span>
-			<div class="leftFoot"></div>
-			<div class="rightFoot"></div>
-		</div>
-		<div style="clear:both"></div>
-		<button class="reset" ng-click="main.init()">Reset</button>
-		<button class="about" ng-click="main.modal = true">About</button>
-		<div ng-show="main.playType == 1" class="aicomments" scroll-glue>
-			<h3>AI Comments</h3>
-			<div class="comment"  ng-repeat="comment in main.aiComments track by $index">{{comment}}</div>
-		</div>
-		    <h2 ng-show="main.winner">Winner:{{main.winner}}</h2>
-	</div>
-</div>
-
-  <script src='js/angular.min.js'></script>
-  <script src='js/scrollglue.js'></script>
-  <script src="js/index.js"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="container" ng-app="connectFour" ng-controller="mainController as main">
+        <div ng-show="main.modal" class="modal" ng-click="main.modal = false">
+        </div>
+        <div class="wrap winner-{{main.winner}}">
+            <h2>Connect Four</h2>
+            <div class="board active-{{main.active}}">
+                <span class="row" ng-repeat="row in main.boardState track by $index">
+                <div ng-repeat="cell in row track by $index" class="cell active-{{cell}}" ng-click="main.drop($parent.$index,$index)"></div>
+                <p style="clear:both;"></p>
+            </span>
+                <div class="leftFoot"></div>
+                <div class="rightFoot"></div>
+            </div>
+            <div style="clear:both"></div>
+            <button class="reset" ng-click="main.init()">Reset</button>
+            <button class="about" ng-click="main.modal = true">About</button>
+            <div ng-show="main.playType == 1" class="aicomments" scroll-glue>
+                <h3>AI Comments</h3>
+                <div class="comment" ng-repeat="comment in main.aiComments track by $index">{{comment}}</div>
+            </div>
+            <h2 ng-show="main.winner">Winner:{{main.winner}}</h2>
+        </div>
+    </div>
+    <script src='js/angular.min.js'></script>
+    <script src='js/scrollglue.js'></script>
+    <script src="js/index.js"></script>
 </body>
+
 </html>
